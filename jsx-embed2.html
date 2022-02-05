@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSX-EMBED</title>
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
+
+</head>
+<body>
+    <div id="root"></div>    
+    <script type="text/babel">
+        const title = "書道"
+        const imgUrl = "data:image/jpeg;base64,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"
+        const elm = 
+        <div>
+            <h1>{title}</h1>
+            <p><img src={imgUrl}/></p>
+        </div>
+
+        ReactDOM.render(elm,document.getElementById('root'))
+        
+    </script>
+</body>
+</html>
