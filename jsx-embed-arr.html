@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSX-EMBED</title>
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        // const item = "SDカード"
+        // const value = 1200
+        const arr = {"SDカード":1200,"USBメモリ":800,"無線マウス":600,"拡張ポート":800}
+        let msg
+        for (const key in arr) {
+            if (Object.hasOwnProperty.call(arr, key)) {
+                const element = arr[key]
+                msg+=<h1>{key} - {element}円</h1>
+            }
+        }
+        msg=<div>{msg}</div>
+        console.log(msg);
+        ReactDOM.render(msg,document.getElementById('root'))
+    </script>
+</body>
+</html>
