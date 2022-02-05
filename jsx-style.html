@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSX-Style</title>
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
+    <script type="text/babel">
+        ReactDOM.render(
+            getDOM(),
+            document.querySelector('#root')
+        )
+
+        function getDOM() {
+            const style1 = {
+                "color" : 'red',
+                "background-color" : 'blue',
+                "font-size" : '1.2em'
+            }
+            const style2 = {
+                "color" : 'red',
+                "background-color" : 'yellow',
+                "border" : '1px solid black',
+                "font-size" : '2em'
+            }
+            return (
+                <div>
+                    <p style={style1}>モテたい</p>    
+                    <p style={style2}>彼女ほしい</p>    
+                </div>
+            )
+        }
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
