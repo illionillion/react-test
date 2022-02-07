@@ -15,17 +15,17 @@
         // const item = "SDカード"
         // const value = 1200
         const arr = {"SDカード":1200,"USBメモリ":800,"無線マウス":600,"拡張ポート":800}
-        let msg
+        let msg=[]
         for (const key in arr) {
             if (Object.hasOwnProperty.call(arr, key)) {
                 const element = arr[key]
-                console.log(element);
-                msg+=<h1>{key} - {element}円</h1>
+                // console.log(element);
+                msg.push(<p>{key} - {element}円</p>)
             }
         }
-        msg=<div>{msg}</div>
+        // msg=<div>{msg}</div>
         console.log(msg);
-        ReactDOM.render(msg,document.getElementById('root'))
+        ReactDOM.render(<div>{msg}</div>,document.getElementById('root'))
     </script>
 </body>
 </html>
