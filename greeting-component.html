@@ -12,15 +12,15 @@
 
         // コンポーネントを定義
         function Greeting(props) {
-            console.log(props);
+            // console.log(props);
             // return <h1 style={props.color}>{props.type}</h1>
             return <h1>{props.type}</h1>
         }
         // コンポーネントを利用
         const dom = <div>
-            <Greeting type="Good Mornig!" color="color:red" />
-            <Greeting type="Hello!" color="color:blue" />
-            <Greeting type="Good Afternoon!" color="color:green" />
+            <Greeting type="Good Mornig!" color="red" />
+            <Greeting type="Hello!" color="blue" />
+            <Greeting type="Good Afternoon!" color="green" />
         </div>
         // Reactで表示する
         ReactDOM.render(dom,document.getElementById('root'))
