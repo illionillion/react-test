@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>st-checkbox</title>
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
+    <script type="text/babel">
+        // 状態を持ったコンポーネントを定義
+        class CBox extends React.Component{
+            // コンストラクタ
+            constructor(props){
+                super(props)
+                // 状態の初期化
+                this.state={checked:false}
+            }
+            clickHandler(){
+                const newValue = !this.state.checked
+                this.setState({checked:newValue})
+            }
+            render() {
+                // 未チェック状態
+                let mark = '□'
+                let bstyle = {fontWeight:'normal'}
+                // チェックされているか
+                if (this.state.checked) {
+                    mark = '■'
+                    bstyle = {fontWeight:'bold'}
+                }
+                // クリックしたときのイベントを指定
+                const clickHandler = (e) => {
+                    const newValue = !this.state.checked
+                    this.setState({checked:newValue})
+                }
+                // 描画内容を返す
+                return (
+                    // <div onClick={this.clickHandler} style={bstyle}>
+                    <div onClick={clickHandler} style={bstyle}>
+                        {mark}&gt;{this.props.label}
+                    </div>
+                )
+            }
+        }
+        // ReactでDOMを書き換える
+        const dom = <div>
+            <CBox label="Apple"/>
+            <CBox label="Google"/>
+            <CBox label="Microsoft"/>
+        </div>
+
+        ReactDOM.render(dom,document.getElementById("root"))
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
